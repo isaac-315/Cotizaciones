@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización - AXONSMARTTECHNOLOGIES SAS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>AXONSMARTTECHNOLOGIES SAS</h1>
+
+        <div class="section">
+            <label for="objetoCotizacion">Objeto de Cotización:</label>
+            <textarea id="objetoCotizacion" placeholder="Ej: Equipos de cómputo para oficina..." rows="4"></textarea>
+        </div>
+
+        <p>........... por medio del presente ponemos a su consideración la cotización del siguiente equipo:</p>
+
+        <table id="cotizacionTable">
+            <thead>
+                <tr>
+                    <th>ITEM</th>
+                    <th>DESCRIPCIÓN</th>
+                    <th>CANT.</th>
+                    <th>PRECIO UNITARIO ($)</th>
+                </tr>
+            </thead>
+            <tbody id="itemsBody">
+                <!-- Filas dinámicas se agregarán aquí -->
+            </tbody>
+        </table>
+
+        <button id="agregarItem">+ Agregar Ítem</button>
+
+        <div class="total-section">
+            <strong>TOTAL: $<span id="totalAmount">0.00</span></strong>
+        </div>
+
+        <button id="imprimirCotizacion">📄 Imprimir Cotización</button>
+
+<!-- Contenedor oculto que solo se muestra al imprimir -->
+<div id="printable-content" style="display: none;">
+  <div class="print-header">
+    <h1>AXONSMARTTECHNOLOGIES SAS</h1>
+    <p><strong>COTIZACIÓN</strong></p>
+  </div>
+
+  <div class="print-body">
+    <div class="print-section">
+      <p><strong>Objeto de Cotización:</strong></p>
+      <p id="print-objeto-cotizacion"></p>
+    </div>
+
+    <table class="print-table">
+      <thead>
+        <tr>
+          <th>ITEM</th>
+          <th>DESCRIPCIÓN</th>
+          <th>CANT.</th>
+          <th>PRECIO UNITARIO ($)</th>
+        </tr>
+      </thead>
+      <tbody id="print-items-body"></tbody>
+    </table>
+
+    <div class="print-total">
+      <strong>TOTAL: $<span id="print-total-amount">0.00</span></strong>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
